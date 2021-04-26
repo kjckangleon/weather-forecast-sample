@@ -8,7 +8,7 @@
 </p>
 
 ## Installation
-- This project was create by using XAMPP.
+- This project was created by using XAMPP.
 - navigate to your xampp folder
 - then follow the steps below:
 1. Git clone this project
