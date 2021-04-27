@@ -1,3 +1,5 @@
+var HOSTURL = 'http://localhost:8000/api'
+
 $(document).ready( function () {
   initTable();
 });
@@ -10,7 +12,7 @@ function initTable() {
     $('#myTable').DataTable({
         "order": [[ 0, "desc" ]], 
         ajax: {
-          url: 'http://localhost:8000/api/weatherData',
+          url: `${HOSTURL}/weatherData`,
           dataSrc: ''
       },
       columns: [
@@ -28,7 +30,7 @@ jQuery(document).ready(function($){
       jQuery('#myForm').trigger("reset");
       jQuery('#formModal').modal('show');
   });
-
+  console.log(HOSTURL);
     $("#formModal").on("hidden.bs.modal", function () {
         $('#cityList').empty();
         $('#weatherData').empty();
@@ -132,7 +134,7 @@ jQuery(document).ready(function($){
       };
       var state = jQuery('#btn-save').val();
       var type = "POST";
-      var ajaxurl = 'http://localhost:8000/api/saveWeather';
+      var ajaxurl = `${HOSTURL}/saveWeather`;
       $.ajax({
           type: type,
           url: ajaxurl,
